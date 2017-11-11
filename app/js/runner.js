@@ -1,4 +1,6 @@
 var temp = require('temp');
+var path = require('path');
+var fs = require('fs');
 temp.track();
 
 var Runner = (function () {
@@ -24,6 +26,14 @@ var Runner = (function () {
     });
   };
 
+  function ensureDirectoryExistence(filePath) {
+    var dirname = path.dirname(filePath);
+    if (fs.existsSync(dirname)) {
+      return true;
+    }
+    ensureDirectoryExistence(dirname);
+    fs.mkdirSync(dirname);
+  };
   my.running = false;
   my.process = null;
 
@@ -41,7 +51,7 @@ var Runner = (function () {
   my.saveCode = function (fileName, code) {
     temp.open(fileName, function(err, info) {
       filePath = info.path;
-
+      ensureDirectoryExistence(filePath);
       fs.writeFile(info.path, my.addRequiresToCode(code), null, function() {
         runRuby();
       });
