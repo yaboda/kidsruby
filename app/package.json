@@ -11,5 +11,7 @@
     "min_height": 600,
     "toolbar": false
   },
-  "chromium-args": "--child-clean-exit"
+  "chromium-args": "--child-clean-exit",
+  "supported_languages": [ "en", "js", "es", "fr", "sv" ]
+
 }

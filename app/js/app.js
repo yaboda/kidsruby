@@ -269,8 +269,9 @@ function scrollToOutputEnd() {
 }
 
 function getLanguage() {
-  // TODO: make sure that the locale is one in our list, or default to en
   var userLang = (navigator.language || navigator.userLanguage).substring(0,2);
+  if( nw.App.manifest.supported_languages.indexOf(userLang) == -1)
+    userLang = "en";
   return userLang;
 }
 
