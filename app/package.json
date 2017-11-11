@@ -12,6 +12,6 @@
     "toolbar": false
   },
   "chromium-args": "--child-clean-exit",
-  "supported_languages": [ "en", "js", "es", "fr", "sv" ]
+  "supported_languages": [ "en", "js", "es", "fr", "sv", "bg" ]
 
 }
