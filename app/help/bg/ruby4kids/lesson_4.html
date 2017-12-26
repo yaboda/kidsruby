@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>Ruby4Kids - Programming For The Fun Of It</title>
+<html><head>
 
-  <!-- Load styles -->
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"><title>Ruby4Kids - Програмиране За Удоволствие</title><!-- Load styles -->
+  
+
+  
   <link rel="stylesheet" href="../../../css/blitzer/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" title="style" charset="utf-8">
   <link rel="stylesheet" href="../../../css/master.css" type="text/css" media="screen" title="style" charset="utf-8">
-  <link rel="stylesheet" href="../../../css/jquery.snippet.min.css" type="text/css" media="screen" title="style" charset="utf-8">
+  <link rel="stylesheet" href="../../../css/jquery.snippet.min.css" type="text/css" media="screen" title="style" charset="utf-8"><!-- Load js -->
 
-  <!-- Load js -->
+  
   <script type="text/javascript" src="../../../js/jquery/jquery-1.6.2.min.js"></script>
   <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
   <script type="text/javascript" src="../../../js/jquery/jquery.snippet.min.js"></script>
@@ -19,55 +21,65 @@
       loadCode("#code-4-2", "../../shared/ruby4kids/code4_2.rb");
       loadCode("#code-4-3", "../../shared/ruby4kids/code4_3.rb");
     });
-  </script>
-</head>
-
-<body class="lesson-set">
-  <h1>Ruby4Kids - Game Programming - Lesson 4</h1>
+  </script></head><body class="lesson-set">
+  <h1>Ruby4Kids - Програмиране на игри - Урок 4</h1>
   <nav id="top">
-    <a href="#back" class="prev-lesson">&laquo; Back</a>
-    <a href="index.html">Back to Lessons</a>
-    <a href="#next" class="next-lesson">Next &raquo;</a>
+    <a href="#back" class="prev-lesson">"Назад</a>
+    <a href="index.html">Се върнете към уроците</a>
+    <a href="#next" class="next-lesson">Още "</a>
   </nav>
 
-  <article class="lesson"><h1>Lesson 4 - Limiting Movement</h1>
-    <section class="page"><h1>The Disappearing Icon</h1>
-      <p> When running your program, did you notice that your icon disappears after a while? The guy keeps moving left until he left the screen, never to be seen again :(. </p>
+  <article class="lesson"></article><h1>Урок 4 - Ограничение на движението</h1>
+    <section class="page"></section><h1>Иконата изчезва</h1>
+      <p>
+При стартиране на програмата, ще забележите, че вашата иконата изчезва
+след известно време? Играчът продължава да се движи наляво, излиза от
+екрана, и никога повече не се вижда :(. </p>
 
-      <p> So, the first thing we're going to do is limit where the icon can go. One of the ways of limiting movement is by adding another conditional under <code>def move_left</code> </p>
+      <p> И така,
+първото нещо, което ще направим, е да сложим граница, до къде икона
+може да отиде. Един от начините за ограничаване на движението е да се
+добави още едно условие под <code>def move_left</code> </p>
 
-      <pre id="code-4-1" class="sampleCode">Code automatically inserted here...</pre>
+      <pre id="code-4-1" class="sampleCode">Код автоматично се добавя тук...</pre>
 
-      <p> Now, what we did above was limit the movement of the icon to stay within a positive x area. That is, if x starts going less than 0, we reset the icon to be at zero. This reset acts as a limit for the icon on the screen.</p>
+      <p>
+Това, което направихме по-горе е да се ограничим движението на иконата,
+за да остане в рамките на положителната част на остта x. Т.е. ако x
+приеме стойности по-малки от 0, тогава условието, което добавихме ще се
+погрижи тази стойност да бъде нула. Това действа, като ограничение за
+иконата на екрана.</p>
 
-      <a href="#prev" class="prev-lesson">&laquo; Back</a>
-      <a href="index.html">Back to Lessons</a>
-      <a href="#next" class="next-lesson">Next &raquo;</a>
+      <a href="#prev" class="prev-lesson">"Назад</a>
+      <a href="index.html">Се върнете към уроците</a>
+      <a href="#next" class="next-lesson">Още "</a>
 
-  </section>
-</article>
+  
 
 
-  <article class="lesson"><h1>Lesson 4 - Limiting Movement</h1>
-    <section class="page"><h1>What "Else"?</h1>
-      <p>Now, we are going to add another conditional statement called <code>else</code>, which just means "otherwise". So, again, we type enter this code under the <code>def move_left</code>:</p>
 
-      <pre id="code-4-2" class="sampleCode">Code automatically inserted here...</pre>
+  <article class="lesson"></article><h1>Урок 4 - Ограничение на движението</h1>
+    <section class="page"></section><h1>Какво прави "Else"?</h1>
+      <p>Сега ние ще добавим още един условен оператор се нарича <code>else</code> означава просто "освен ако".&nbsp; Така че, отново, за да въведете този код по <code>def move_left</code>:</p>
 
-      <p>The <code>else</code>, in this case, refers to regular movement. So, if x is 0 or greater, then the movement to the left is going to be using the code that we developed in the last lesson:<code>@x = @x - 10</code>.</p>
+      <pre id="code-4-2" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Това <code>else</code>
+в този случай, се отнася до редовно движение. Така че, ако x е равно на
+0 или повече, тогава движението наляво ще използва кода, който сме
+започнали в миналият урок:<code>@x = @x - 10</code>.</p>
       
-      <p>Here is the entire program you should have written so far:</p>
-      <pre id="code-4-3" class="sampleCode">Code automatically inserted here...</pre>
+      <p>Ето цялата програма, както трябва да изглежда до момента:</p>
+      <pre id="code-4-3" class="sampleCode">Код автоматично се добавя тук...</pre>
 
-      <p>So, now that we know how to move left and limit that movement, let's <a href="lesson_5.html">add and limit some other movements in lesson 5</a>!</p>
+      <p>И така, сега ние знаем, как да се движим наляво и ограничаваме движението, нека <a href="lesson_5.html">добавим други ограничения в урок 5</a>!</p>
 
-      <a href="#prev" class="prev-lesson">&laquo; Back</a>
-      <a href="index.html">Back to Lessons</a>
-      <a href="#next" class="next-lesson">Next &raquo;</a>
+      <a href="#prev" class="prev-lesson">"Назад</a>
+      <a href="index.html">Се върнете към уроците</a>
+      <a href="#next" class="next-lesson">Още "</a>
 
-    </section>
-  </article>
+    
+  
       
-<a href="#top">Back to top</a>
-</body>
-</html>
+<a href="#top">Върнете се в началото</a>
+</body></html>

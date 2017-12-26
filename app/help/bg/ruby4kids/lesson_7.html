@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>Ruby4Kids - Programming For The Fun Of It</title>
-
-  <!-- Load styles -->
-  <link rel="stylesheet" href="../../../css/blitzer/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" title="style" charset="utf-8">
-  <link rel="stylesheet" href="../../../css/master.css" type="text/css" media="screen" title="style" charset="utf-8">
-  <link rel="stylesheet" href="../../../css/jquery.snippet.min.css" type="text/css" media="screen" title="style" charset="utf-8">
-
-  <!-- Load js -->
-  <script type="text/javascript" src="../../../js/jquery/jquery-1.6.2.min.js"></script>
-  <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
-  <script type="text/javascript" src="../../../js/jquery/jquery.snippet.min.js"></script>
-  <script type="text/javascript" src="../../../js/lessons.js"></script>
-  <script type="text/javascript">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Ruby4Kids - Програмиране За Удоволствие</title>
+    <!-- Load styles -->
+    <link rel="stylesheet" href="../../../css/blitzer/jquery-ui-1.8.16.custom.css"
+      type="text/css" media="screen" title="style" charset="utf-8">
+    <link rel="stylesheet" href="../../../css/master.css" type="text/css" media="screen"
+      title="style" charset="utf-8">
+    <link rel="stylesheet" href="../../../css/jquery.snippet.min.css" type="text/css"
+      media="screen" title="style" charset="utf-8">
+    <!-- Load js -->
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="../../../js/lessons.js"></script>
+    <script type="text/javascript">
     $(document).ready(function() {
       loadCode("#code-7-1", "../../shared/ruby4kids/code7_1.rb");
       loadCode("#code-7-2", "../../shared/ruby4kids/code7_2.rb");
@@ -24,94 +26,101 @@
       loadCode("#code-7-7", "../../shared/ruby4kids/code7_7.rb");
     });
   </script>
-</head>
-
-<body class="lesson-set">
-  <h1>Ruby4Kids - Game Programming - Lesson 7</h1>
-  <nav id="top">
-    <a href="#back" class="prev-lesson">&laquo; Back</a>
-    <a href="index.html">Back to Lessons</a>
-    <a href="#next" class="next-lesson">Next &raquo;</a>
-  </nav>
-
-  <article class="lesson"><h1>Lesson 7 - Getting Hit</h1>
-    <section class="page"><h1>Defining a Hit</h1>
-      <p>OK, so now it's time to make sure that when the ball hits the player, the game stops. </p>
-      <p>So, the first thing we need to do is go to the <code>Game</code> class and under <code>@ball.update</code>, we will define a hit:</p>
-
-      <pre id="code-7-1" class="sampleCode">Code automatically inserted here...</pre>
-
-      <p>Now, let's go over to our player and define this <code>hit_by?</code> method. So, we'll go to the <code>Player</code> class and define what it means to be hit by the ball: </p>
-      <pre id="code-7-2" class="sampleCode">Code automatically inserted here...</pre>
-
-      <p>Now, what we did above is add a method that Gosu gives us, called <code>distance</code>, where we pass the x coordinate and y coordinate of one object and the x coordinate and y coordinate of another object.</p>
-
-      <p>We also wrote that if the distance between these two coordinates is less than 50, we're going to make that a hit. </p>
-
-      <a href="#prev" class="prev-lesson">&laquo; Back</a>
-      <a href="index.html">Back to Lessons</a>
-      <a href="#next" class="next-lesson">Next &raquo;</a>
-
-    </section>
-  </article>
-
-  <article class="lesson"><h1>Lesson 7 - Getting Hit</h1>
-    <section class="page"><h1>More Defining</h1>
-
-      <p>Let's go back to the <code>Game</code> class. We've said that if a player is hit by a ball, we should stop the game. So, we need to define what stopping the game means. </p>
-
-      <p>Now, we'll introduce a new variable here to make the definition work, called <code>running</code>. So, under the <code>Game</code>class, we'll type:
-     
-      <pre id="code-7-3" class="sampleCode">Code automatically inserted here...</pre>
-      <p> So, if we stop the game, the running will be false. However, we need to first add this <code>running</code> variable and make it equal to true. So, when the game starts, the game is running. When the player hets hit by the ball, the method <code>stop_game!</code> is going to set the variable, <code>running</code>, to false, which stops the game.</p> 
-
-      <a href="#prev" class="prev-lesson">&laquo; Back</a>
-      <a href="index.html">Back to Lessons</a>
-      <a href="#next" class="next-lesson">Next &raquo;</a>
-    
-    </section>
-  </article>
-
-
-
-  <article class="lesson"><h1>Lesson 7 - Getting Hit</h1>
-    <section class="page"><h1>Stop! Hammer Time</h1>
-      <p>Now, we want the player and ball to stop moving when the game stops. So, if you look at the update method, you'll see that we have all this that makes either the player move or makes the ball move. Now, that will work as long as the game is running. But, once it stops, we don't want any of that to happen. So, directly under <code>def update</code>, we'll type:
- 
-      <pre id="code-7-4" class="sampleCode">Code automatically inserted here...</pre>
-
-      <p>Now, let's go back to the <code>Player</code> class. We are now going to define two methods on the ball: x and y. To do this, we type:
-
-      <pre id="code-7-5" class="sampleCode">Code automatically inserted here...</pre>
-
-      <p>So, if you recall, the ball has x and y coordinate variables, which we cannot get to from the player. However, we can call the methods on the player. So, what we did above was call the x method, which will return the x variable and called the y method, which will return the y variable to us. 
-
-      <a href="#prev" class="prev-lesson">&laquo; Back</a>
-      <a href="index.html">Back to Lessons</a>
-      <a href="#next" class="next-lesson">Next &raquo;</a>
-
-    </section>
-  </article>
-
-
-
-  <article class="lesson"><h1>Lesson 7 - Getting Hit</h1>
-    <section class="page"><h1>Getting too Close</h1>
-
-      <p>Finally, we want the player to start on a different y position. The 50 is fine for the x position, but the y position is getting too close to the top of the window. So, under <code>def intitialize(game_window)</code>, we'll change te y to 150. It should end up looking like this:</p>
-
-      <pre id="code-7-6" class="sampleCode">Code automatically inserted here...</pre>      
-
-      <p>I want to make the y at 150, so it's further at the bottom. This makes it easier for me to dodge the ball.</p>
-      
-      <p>Once again, here is the entire program you should have written so far:</p>
-      <pre id="code-7-7" class="sampleCode">Code automatically inserted here...</pre>
-
-      <p>Alright, hot shot, it looks like you do got what it takes. Let's take it to the <a href="lesson_8.html">next level in lesson 8</a>!</p>
-    </section>
-  </article>
-
-  <a href="#top">Back to top</a>
-
-</body>
+  </head>
+  <body class="lesson-set">
+    <h1>Ruby4Kids - Програмиране на игри - Урок 7</h1>
+    <nav id="top"> <a href="#back" class="prev-lesson">"Назад</a> <a href="index.html">Се
+        върнете към уроците</a> <a href="#next" class="next-lesson">Още "</a> </nav>
+    <article class="lesson">
+      <h1>Урок 7 - Удар</h1>
+      <section class="page">
+        <h1>Определение за удар</h1>
+        <p>Така, сега е време, да се уверим в това, че когато топката се удари в
+          играча, играта спира. </p>
+        <p>И така, първото нещо, което трябва да направите, е да преминете в
+          класа <code>Game</code> и в <code>@ball.update</code> ние определяме
+          удара:</p>
+        <pre id="code-7-1" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Сега, нека да преминем към нашия играч създадем <code>hit_by?</code>
+          метод. И така, ще отидем в клас <code>Player</code>&nbsp; и ще
+          определим, какво означава да си ударил някой с топка</p>
+        <pre id="code-7-2" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Това, което направихме по-горе е използвахме метод, който gosu ни
+          дава,и се нарича <code>distance</code> , където ние дадохме
+          координатите X и Y&nbsp; на един обект и&nbsp; координатите&nbsp; X и
+          Y&nbsp; на друг обект.</p>
+        <p>Също така написахме, че ако разстоянието между тези две координати е
+          по-малко от 50, ще считаме че имаме удар. </p>
+        <a href="#prev" class="prev-lesson">"Назад</a> <a href="index.html">Се
+          върнете към уроците</a> <a href="#next" class="next-lesson">Още "</a>
+      </section>
+    </article>
+    <article class="lesson">
+      <h1>Урок 7 - Удар</h1>
+      <section class="page">
+        <h1>По подробно описание</h1>
+        <p>Нека да се върнем към класа <code>Game</code> . Вече говорихме, че
+          ако играчът удари топката, трябва да се спре играта. Така че, ние
+          трябва да определим, какво разбираме под спиране на играта. </p>
+        <p>Сега ще въведем нова променлива, за да се направи определение на
+          работеща игра, наричаме променливата <code>running</code>. Така, в
+          класа <code>Game</code>, пишем:
+        </p>
+        <pre id="code-7-3" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p> Така, че ако ще спрем играта, <code>running</code>&nbsp; ще бъде
+          невярно. Въпреки това, ние трябва първо да добавим тази <code>running</code>
+          променлива и да ѝ дадем стойност равна на True. Така, че когато
+          започнете игра, играта стартира и е работеща. Когато играч е ударен от
+          топката, методът <code>stop_game!</code> ще промени стойноста на <code>running</code>
+          в невярно, което и спира играта.</p>
+        <a href="#prev" class="prev-lesson">"Назад</a> <a href="index.html">Се
+          върнете към уроците</a> <a href="#next" class="next-lesson">Още "</a>
+      </section>
+    </article>
+    <article class="lesson">
+      <h1>Урок 7 - Удар</h1>
+      <section class="page">
+        <h1>Спри! HAMMERTIME</h1>
+        <p>Сега, ние искаме, когато играчът е ударен от топка и двамата да спрат
+          да се движат. Така, че ако се вгледате в метод Update, ще видите, че
+          там имаме всичко, което прави един играч да се движи или кара топката
+          да се движи. Искаме да направим така че това да е така само докато
+          играта върви. Но, след като играта спре, искаме и движението да спре.
+          Така, точно под <code>def update</code> добавяме:
+        </p>
+        <pre id="code-7-4" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Сега, нека се върнем към класа <code>Player</code>. Сега ще създадем
+          два метода за топката: X и Y. За да направим това, пишем:
+        </p>
+        <pre id="code-7-5" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Aко си спомним, топката е с координати X и Y, които са и променливи,
+          които обаче не можем да получим от играча. Въпреки това, можем да
+          извикваме методи на играча. Така че това, което направихме по-горе,
+          беше да извикаме метод x, който ще върне стойноста на променлива X и
+          същото за ппроменливата y. <a href="#prev" class="prev-lesson">"Назад</a>
+          <a href="index.html">Се върнете към уроците</a> <a href="#next" class="next-lesson">Още
+            "</a> </p>
+      </section>
+    </article>
+    <article class="lesson">
+      <h1>Урок 7 - Удар</h1>
+      <section class="page">
+        <h1>Твърде близо</h1>
+        <p>И накрая, искаме да позволим на играча да се появи в различни Y
+          позиции. Стойност 50 е нормална за позициите на x, но с Y позицията му
+          става твърде близо до горната част на прозореца. Така, в съответствие
+          с <code>def intitialize(game_window)</code> ще променим y до 150. В
+          крайна сметка би трябвало&nbsp; да изглежда така:</p>
+        <pre id="code-7-6" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Аз искаме Y да е 150, далеч в дъното на прозореца. Това прави
+          по-лесно отбягването на топката.</p>
+        <p>Още веднъж повтаряме, тук е цялата програма, така както трябва да
+          изглежда досега:</p>
+        <pre id="code-7-7" class="sampleCode">Код автоматично се добавя тук...</pre>
+        <p>Добре, сега имаме каквото ни трябва за да преминем на <a href="lesson_8.html">следващото
+            ниво урок 8</a>!</p>
+      </section>
+    </article>
+    <a href="#top">Върнете се в началото</a>
+  </body>
 </html>

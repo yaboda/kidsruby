@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Ruby4Kids - Програмиране За Удоволствие</title>
+
+  <!-- Load styles -->
+  <link rel="stylesheet" href="../../../css/blitzer/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" title="style" charset="utf-8">
+  <link rel="stylesheet" href="../../../css/master.css" type="text/css" media="screen" title="style" charset="utf-8">
+  <link rel="stylesheet" href="../../../css/jquery.snippet.min.css" type="text/css" media="screen" title="style" charset="utf-8">
+
+  <!-- Load js -->
+  <script type="text/javascript" src="../../../js/jquery/jquery-1.6.2.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery/jquery.snippet.min.js"></script>
+  <script type="text/javascript" src="../../../js/lessons.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      loadCode("#code-7-1", "../../shared/ruby4kids/code7_1.rb");
+      loadCode("#code-7-2", "../../shared/ruby4kids/code7_2.rb");
+      loadCode("#code-7-3", "../../shared/ruby4kids/code7_3.rb");
+      loadCode("#code-7-4", "../../shared/ruby4kids/code7_4.rb");
+      loadCode("#code-7-5", "../../shared/ruby4kids/code7_5.rb");
+      loadCode("#code-7-6", "../../shared/ruby4kids/code7_6.rb");
+      loadCode("#code-7-7", "../../shared/ruby4kids/code7_7.rb");
+    });
+  </script>
+</head>
+
+<body class="lesson-set">
+  <h1>Ruby4Kids - Програмиране На Игри - Урок 7</h1>
+  <nav id="top">
+    <a href="#back" class="prev-lesson">"Назад</a>
+    <a href="index.html">Се върнете към уроците</a>
+    <a href="#next" class="next-lesson">Още "</a>
+  </nav>
+
+  <article class="lesson"><h1>Урок 7 - Удар</h1>
+    <section class="page"><h1>Определение хит</h1>
+      <p>Така че, сега е време, за да се уверите в това, че когато топката се озовава в играча, играта спира. </p>
+      <p>И така, първото нещо, което трябва да направите, е да преминете на <code>Game</code> клас и под <code>@ball.update</code> ние определяме хит:</p>
+
+      <pre id="code-7-1" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Сега, нека да преминем към нашия играч и определи това <code>hit_by?</code> метод. И така, ние ще отидем в <code>Player</code> клас и да определи, какво означава да си удар по топката: </p>
+      <pre id="code-7-2" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Сега, това, което направихме по-горе, това добавете метод, който gosu ни дава, се нарича <code>distance</code> там , където ние дадохме координатите X и Y координатите на един обект и на координатите на X и Y координати на друг обект.</p>
+
+      <p>Ние сме също така пише, че ако разстоянието между тези две координати, на по-малко от 50, ние ще направим това натиснете. </p>
+
+      <a href="#prev" class="prev-lesson">"Назад</a>
+      <a href="index.html">Се върнете към уроците</a>
+      <a href="#next" class="next-lesson">Още "</a>
+
+    </section>
+  </article>
+
+  <article class="lesson"><h1>Урок 7 - Удар</h1>
+    <section class="page"><h1>По-Определяне На</h1>
+
+      <p>Нека да се върнем към <code>Game</code> - и клас. Ние вече говорихме, че ако играчът да удари топката, трябва да се спре играта. Така че, ние трябва да се определи, че под спирка на играта в страната. </p>
+
+      <p>Сега, ние ще въведем нова променлива, за да се направи определение на работа, се нарича <code>running</code>. Така, под <code>Game</code>клас, ние типа на:
+
+</p>
+<pre id="code-7-3" class="sampleCode">Код автоматично се добавя тук...</pre>
+      <p> Така че, ако ние ще спрем играта, бягане ще бъде невярно. Въпреки това, ние трябва първо да добавите този <code>running</code> променлива и да го направи равен на True. Така че, когато започнете игра, играта стартира. Когато играч втш удари по топката, метод <code>stop_game!</code> върви, определени в променливата <code>running</code> в една лъжа, която спира играта.</p> 
+
+      <a href="#prev" class="prev-lesson">"Назад</a>
+      <a href="index.html">Се върнете към уроците</a>
+      <a href="#next" class="next-lesson">Още "</a>
+    
+    </section>
+  </article>
+
+
+
+  <article class="lesson"><h1>Урок 7 - Удар</h1>
+    <section class="page"><h1>Спри! Време Чук</h1>
+      <p>Сега, ние искаме да се играч и топката ще спре, когато играта спира. Така че, ако се вгледате в метод Update, ще видите, че имаме всичко, което прави един играч да се движат или да кара топката да се движи. Сега, че ще работят толкова дълго време, как играта работи. Но, след като той спира, ние не искаме това да се случи. Така, точно под <code>def update</code> ние типа на:
+
+</p>
+<pre id="code-7-4" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Сега, нека се върнем към <code>Player</code> - и клас. Ние сега ще се определи от два метода на кълбо: X и Y. за Да направите това, ние типа на:
+
+</p>
+<pre id="code-7-5" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Така че, ако не забравяйте, топката е с координати X и Y са променливи, които ние не можем да получим от играч. Въпреки това, ние можем да предизвика методи на играча. Така че това, което направихме по-горе, беше да се обадя x метод, който ще бъде върнат на променлива X се нарича метод на g, който ще върне стойност за нас. 
+
+<a href="#prev" class="prev-lesson">"Назад</a>
+      <a href="index.html">Се върнете към уроците</a>
+      <a href="#next" class="next-lesson">Още "</a>
+
+    </p></section>
+  </article>
+
+
+
+  <article class="lesson"><h1>Урок 7 - Удар</h1>
+    <section class="page"><h1>Твърде близо</h1>
+
+      <p>И накрая, ние искаме да се позволи на играча да се появи в различни Y позиция. В 50-това е нормално за позициите на x, но Y позиция става твърде близо до горната част на прозореца. Така, в съответствие с <code>def intitialize(game_window)</code> ние ще се променят тези грама до 150. Тя трябва в крайна сметка изглежда така:</p>
+
+      <pre id="code-7-6" class="sampleCode">Код автоматично се добавя тук...</pre>      
+
+      <p>Аз искам да Y до 150, толкова е по-далеч в дъното. Това прави по-лесно за мен, за да се укриват от топката.</p>
+      
+      <p>Още веднъж повтарям, тук е цялата програма трябваше да напише така:</p>
+      <pre id="code-7-7" class="sampleCode">Код автоматично се добавя тук...</pre>
+
+      <p>Добре, пострел, изглежда, сте получили това, което трябва. Нека да вземем да го <a href="lesson_8.html">следващото ниво урок 8</a>!</p>
+    </section>
+  </article>
+
+  <a href="#top">Върнете се в началото</a>
+
+</body>
+</html>
